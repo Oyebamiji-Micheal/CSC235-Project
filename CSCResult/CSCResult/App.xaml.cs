@@ -1,8 +1,6 @@
-﻿using CSCResult.Services;
-using CSCResult.Views;
+﻿using CSCResult.Views;
 using System;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace CSCResult
 {
@@ -13,7 +11,6 @@ namespace CSCResult
         {
             InitializeComponent();
 
-            DependencyService.Register<MockDataStore>();
             MainPage = new AppShell();
         }
 

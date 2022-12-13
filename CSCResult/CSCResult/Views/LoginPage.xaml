@@ -1,14 +1,66 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d"
-             x:Class="CSCResult.Views.LoginPage"
-             Shell.NavBarIsVisible="False">
-    <ContentPage.Content>
-        <StackLayout Padding="10,0,10,0" VerticalOptions="Center">
-            <Button VerticalOptions="Center" Text="Login" Command="{Binding LoginCommand}"/>
+             BackgroundColor="White"
+             x:Class="CSCResult.Views.LoginPage">
+    
+    <Grid>
+        
+        <Image Source="background.jgp" Aspect="AspectFill" HorizontalOptions="Center" Opacity="1"/>
+        <StackLayout>
+
         </StackLayout>
-    </ContentPage.Content>
+        <StackLayout>
+            <Grid RowSpacing="25" RowDefinitions="Auto, Auto, Auto, Auto">
+                <StackLayout Grid.Row="4" Spacing="0">
+                    <Image Source="logo.png" WidthRequest="200"/>
+                    <Label Text="" FontSize="30" TextColor="WhiteSmoke" HorizontalTextAlignment="Center" FontAttributes="Bold"/>
+
+                    <Button 
+                        Text="Student Login"
+                        TextColor="White"
+                        Margin="15"
+                        BackgroundColor="Brown"
+                        WidthRequest="110" 
+                        HeightRequest="47"
+                        CornerRadius="30"
+                        FontSize="18"
+                        FontFamily="Cambria"
+                        FontAttributes="Bold"/>
+
+                    <Button 
+                        Text="Lecturer Login"
+                        TextColor="Brown"
+                        Margin="15"
+                        BorderColor="Red"
+                        BorderWidth="1.5"
+                        BackgroundColor="White"
+                        WidthRequest="110" 
+                        HeightRequest="47"
+                        CornerRadius="30"
+                        FontSize="18"
+                        FontFamily="Cambria"
+                        FontAttributes="Bold"/>
+
+                    <Frame 
+                           BorderColor="Transparent"
+                           BackgroundColor="Black"
+                           Margin="10, 100, 10, 0"
+                           Padding="5"
+                           HeightRequest="70"
+                           CornerRadius="10">
+                        <Label
+                            Text="This project is a result of CSC235 - Object Oriented Programming. &#10;- To think straight is the font of knowledge..."
+                            FontFamily="Cambria"
+                            TextColor="LightGoldenrodYellow"
+                            FontSize="18"
+                            HorizontalTextAlignment="Start"
+                            VerticalTextAlignment="Start"
+                            FontAttributes="Bold"
+                            />
+                    </Frame>
+                </StackLayout>
+            </Grid>
+        </StackLayout>
+    </Grid>
 </ContentPage>
