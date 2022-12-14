@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CSCResult.Views.StudentLogin">
+
+    <Grid>
+        <Image Source="background.jgp" Aspect="AspectFill" HorizontalOptions="Center" Opacity="1"/>
+        <StackLayout>
+            <Grid RowSpacing="25" RowDefinitions="Auto, Auto, Auto, Auto">
+                <StackLayout Grid.Row="4" Spacing="0">
+                    <Image Source="logo.png" WidthRequest="200"/>
+
+                    <Label
+                        Text="Students Login"
+                        FontSize="25"
+                        TextColor="White"
+                        HorizontalTextAlignment="Center"
+                        FontAttributes="Bold"/>
+
+                    <Frame 
+                           BorderColor="Transparent"
+                           BackgroundColor="Transparent"
+                           Margin="15"
+                           Padding="0"
+                           HeightRequest="70"
+                           CornerRadius="20">
+                        <Frame
+                            BorderColor="White"
+                            BackgroundColor="Transparent"
+                            Margin="1"
+                            Padding="25,0,25,0"
+                            HeightRequest="60"
+                            CornerRadius="40">
+                            <Entry 
+                                TextColor="White"
+                                FontSize="18"
+                                Placeholder="Matric No"
+                                PlaceholderColor="White"/>
+                        </Frame>
+                    </Frame>
+                    <Frame 
+                           BorderColor="Black"
+                           BackgroundColor="Transparent"
+                           Margin="15"
+                           Padding="0"
+                           HeightRequest="70"
+                           CornerRadius="50">
+                        <Frame
+                            BorderColor="White"
+                            BackgroundColor="Transparent"
+                            Margin="1"
+                            Padding="25,0,25,0"
+                            HeightRequest="60"
+                            CornerRadius="50">
+                            <Entry 
+                                TextColor="White"
+                                FontSize="18"
+                                Placeholder="Password"
+                                PlaceholderColor="White"
+                                IsPassword="True"
+                                x:Name="EntryPassword"/>
+                        </Frame>
+                    </Frame>
+                    <RelativeLayout Padding="25">
+                        <CheckBox
+                            Color="White"
+                            IsChecked="False"
+                            x:Name="CheckBox"
+                            Margin="15,0,0,0"
+                            CheckedChanged="CheckBox_CheckedChanged"/>
+                        <Label 
+                            Text="Show Password"
+                            TextColor="White"
+                            FontSize="18"
+                            RelativeLayout.XConstraint="50"
+                            RelativeLayout.YConstraint="3"/>
+                    </RelativeLayout>
+                    <Button 
+                        Text="Login"
+                        TextColor="White"
+                        Margin="15"
+                        BackgroundColor="Brown"
+                        WidthRequest="110" 
+                        HeightRequest="47"
+                        CornerRadius="30"
+                        FontSize="18"
+                        FontFamily="Cambria"
+                        FontAttributes="Bold"/>
+                </StackLayout>
+            </Grid>
+        </StackLayout>
+    </Grid>
+</ContentPage>
