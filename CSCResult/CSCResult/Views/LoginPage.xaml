@@ -5,11 +5,8 @@
              x:Class="CSCResult.Views.LoginPage">
     
     <Grid>
-        
-        <Image Source="background.jgp" Aspect="AspectFill" HorizontalOptions="Center" Opacity="1"/>
-        <StackLayout>
 
-        </StackLayout>
+        <Image Source="background.jgp" Aspect="AspectFill" HorizontalOptions="Center" Opacity="1"/>
         <StackLayout>
             <Grid RowSpacing="25" RowDefinitions="Auto, Auto, Auto, Auto">
                 <StackLayout Grid.Row="4" Spacing="0">
@@ -17,6 +14,7 @@
                     <Label Text="" FontSize="30" TextColor="WhiteSmoke" HorizontalTextAlignment="Center" FontAttributes="Bold"/>
 
                     <Button 
+                        x:Name="HandleStudentLogin"
                         Text="Student Login"
                         TextColor="White"
                         Margin="15"
@@ -26,10 +24,12 @@
                         CornerRadius="30"
                         FontSize="18"
                         FontFamily="Cambria"
-                        FontAttributes="Bold"/>
+                        FontAttributes="Bold"
+                        Clicked="HandleStudentLogin_Clicked"/>
 
                     <Button 
-                        Text="Lecturer Login"
+                        x:Name="HandleAdminLogin"
+                        Text="Admin Login"
                         TextColor="Brown"
                         Margin="15"
                         BorderColor="Red"
@@ -40,19 +40,20 @@
                         CornerRadius="30"
                         FontSize="18"
                         FontFamily="Cambria"
-                        FontAttributes="Bold"/>
+                        FontAttributes="Bold"
+                        Clicked="HandleAdminLogin_Clicked"/>
 
                     <Frame 
                            BorderColor="Transparent"
-                           BackgroundColor="Black"
-                           Margin="10, 100, 10, 0"
+                           BackgroundColor="Transparent"
+                           Margin="10, 80, 10, 0"
                            Padding="5"
-                           HeightRequest="70"
+                           HeightRequest="100"
                            CornerRadius="10">
                         <Label
-                            Text="This project is a result of CSC235 - Object Oriented Programming. &#10;- To think straight is the font of knowledge..."
+                            Text="This project is a result of CSC235 - Object Oriented Programming, and is aimed at demonstrating the understanding of OOP Paradigms. &#10;To think straight is the font of knowledge..."
                             FontFamily="Cambria"
-                            TextColor="LightGoldenrodYellow"
+                            TextColor="White"
                             FontSize="18"
                             HorizontalTextAlignment="Start"
                             VerticalTextAlignment="Start"

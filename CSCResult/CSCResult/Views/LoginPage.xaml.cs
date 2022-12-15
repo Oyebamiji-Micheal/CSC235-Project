@@ -16,5 +16,15 @@ namespace CSCResult.Views
         {
             InitializeComponent();
         }
+
+        async public void HandleStudentLogin_Clicked(object sender, EventArgs args)
+        {
+            await Navigation.PushAsync(new StudentLogin());
+        }
+
+        async public void HandleAdminLogin_Clicked(object sender, EventArgs args)
+        {
+            await Navigation.PushAsync(new AdminLogin());
+        }
     }
 }
