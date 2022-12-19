@@ -1,76 +1,82 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:CSCResult.ViewModels"
              x:Class="CSCResult.Views.StudentLogin">
 
+    <ContentPage.BindingContext>
+        <vm:StudentLoginViewModel/>
+    </ContentPage.BindingContext>
+
+
     <Grid>
-        <Image Source="background.jgp" Aspect="AspectFill" HorizontalOptions="Center" Opacity="1"/>
+        <Image Source="student_background.jgp" Aspect="AspectFill" HorizontalOptions="Center" Opacity="1"/>
         <StackLayout>
             <Grid RowSpacing="25" RowDefinitions="Auto, Auto, Auto, Auto">
                 <StackLayout Grid.Row="4" Spacing="0">
                     <Image Source="logo.png" WidthRequest="200"/>
 
-                    <Label
-                        Text="Students Login"
-                        FontSize="25"
-                        TextColor="White"
-                        HorizontalTextAlignment="Center"
-                        FontAttributes="Bold"/>
-
+                    <Frame 
+                           BorderColor="Transparent"
+                           BackgroundColor="White"
+                           Margin="15"
+                           Padding="0"
+                           HeightRequest="70"
+                           CornerRadius="50">
+                        <Frame
+                            BorderColor="Black"
+                            BackgroundColor="White"
+                            Margin="1"
+                            Padding="25,0,25,0"
+                            HeightRequest="60"
+                            CornerRadius="60">
+                            <Entry 
+                                TextColor="Black"
+                                FontSize="18"
+                                Placeholder="Matric No"
+                                Keyboard="Numeric"
+                                Text="{Binding MatricNo}"
+                                FontAttributes="Bold"
+                                PlaceholderColor="Black"
+                                x:Name="EntryMatricNo"/>
+                        </Frame>
+                    </Frame>
                     <Frame 
                            BorderColor="Transparent"
                            BackgroundColor="Transparent"
                            Margin="15"
                            Padding="0"
                            HeightRequest="70"
-                           CornerRadius="20">
-                        <Frame
-                            BorderColor="White"
-                            BackgroundColor="Transparent"
-                            Margin="1"
-                            Padding="25,0,25,0"
-                            HeightRequest="60"
-                            CornerRadius="40">
-                            <Entry 
-                                TextColor="White"
-                                FontSize="18"
-                                Placeholder="Matric No"
-                                PlaceholderColor="White"/>
-                        </Frame>
-                    </Frame>
-                    <Frame 
-                           BorderColor="Black"
-                           BackgroundColor="Transparent"
-                           Margin="15"
-                           Padding="0"
-                           HeightRequest="70"
                            CornerRadius="50">
                         <Frame
-                            BorderColor="White"
-                            BackgroundColor="Transparent"
+                            BorderColor="Black"
+                            BackgroundColor="white"
                             Margin="1"
                             Padding="25,0,25,0"
                             HeightRequest="60"
                             CornerRadius="50">
                             <Entry 
-                                TextColor="White"
+                                TextColor="Black"
                                 FontSize="18"
                                 Placeholder="Password"
-                                PlaceholderColor="White"
+                                Text="{Binding Password}"
+                                FontAttributes="Bold"
+                                PlaceholderColor="Black"
                                 IsPassword="True"
                                 x:Name="EntryPassword"/>
                         </Frame>
                     </Frame>
                     <RelativeLayout Padding="25">
                         <CheckBox
-                            Color="White"
+                            Color="Black"
                             IsChecked="False"
                             x:Name="CheckBox"
                             Margin="15,0,0,0"
                             CheckedChanged="CheckBox_CheckedChanged"/>
                         <Label 
                             Text="Show Password"
-                            TextColor="White"
+                            FontAttributes="Bold"
+                            TextColor="Black"
                             FontSize="18"
                             RelativeLayout.XConstraint="50"
                             RelativeLayout.YConstraint="3"/>
@@ -85,7 +91,9 @@
                         CornerRadius="30"
                         FontSize="18"
                         FontFamily="Cambria"
-                        FontAttributes="Bold"/>
+                        FontAttributes="Bold"
+                        Command="{Binding LoginCommand}"
+                        x:Name="LoginCommand"/>
                 </StackLayout>
             </Grid>
         </StackLayout>

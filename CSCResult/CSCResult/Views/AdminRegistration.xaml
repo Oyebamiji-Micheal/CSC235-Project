@@ -2,10 +2,10 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:CSCResult.ViewModels"
-             x:Class="CSCResult.Views.AdminLogin">
+             x:Class="CSCResult.Views.AdminRegistration">
 
     <ContentPage.BindingContext>
-        <vm:AdminLoginViewModel/>
+        <vm:StudentLoginViewModel/>
     </ContentPage.BindingContext>
 
 
@@ -75,14 +75,14 @@
                             CheckedChanged="CheckBox_CheckedChanged"/>
                         <Label 
                             Text="Show Password"
-                            FontAttributes="Bold"
                             TextColor="Black"
+                            FontAttributes="Bold"
                             FontSize="18"
                             RelativeLayout.XConstraint="50"
                             RelativeLayout.YConstraint="3"/>
                     </RelativeLayout>
                     <Button 
-                        Text="Login"
+                        Text="Register"
                         TextColor="White"
                         Margin="15"
                         BackgroundColor="Brown"
@@ -92,7 +92,7 @@
                         FontSize="18"
                         FontFamily="Cambria"
                         FontAttributes="Bold"
-                        Command="{Binding LoginCommand}"
+                        Command="{Binding RegisterCommand}"
                         x:Name="LoginCommand"/>
                 </StackLayout>
             </Grid>
