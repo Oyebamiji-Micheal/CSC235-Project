@@ -3,28 +3,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace CSCResult.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class LoginPage : ContentPage
+    public partial class AdminApp : ContentPage
     {
-        public LoginPage()
+        public AdminApp()
         {
             InitializeComponent();
         }
 
-        async public void StudentApp_Clicked(object sender, EventArgs args)
+        async public void AdminLogin_Clicked(object sender, EventArgs args)
         {
-            await Navigation.PushAsync(new StudentApp());
+            await Navigation.PushAsync(new AdminLogin());
         }
 
-        async public void AdminApp_Clicked(object sender, EventArgs args)
+        async public void AdminRegistration_Clicked(object sender, EventArgs args)
         {
-            await Navigation.PushAsync(new AdminApp());
+            await Navigation.PushAsync(new AdminRegistration());
         }
     }
 }

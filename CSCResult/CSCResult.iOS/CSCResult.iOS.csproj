@@ -142,4 +142,7 @@
       <Name>CSCResult</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\student_background.jpg" />
+  </ItemGroup>
 </Project>

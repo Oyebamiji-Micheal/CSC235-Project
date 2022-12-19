@@ -2,10 +2,10 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:CSCResult.ViewModels"
-             x:Class="CSCResult.Views.AdminLogin">
+             x:Class="CSCResult.Views.StudentRegistration">
 
     <ContentPage.BindingContext>
-        <vm:AdminLoginViewModel/>
+        <vm:StudentLoginViewModel/>
     </ContentPage.BindingContext>
 
 
@@ -33,12 +33,12 @@
                             <Entry 
                                 TextColor="Black"
                                 FontSize="18"
-                                Placeholder="Email"
-                                Text="{Binding Email}"
-                                Keyboard="Email"
+                                Placeholder="Matric No"
+                                Keyboard="Numeric"
+                                Text="{Binding MatricNo}"
                                 FontAttributes="Bold"
                                 PlaceholderColor="Black"
-                                x:Name="EntryEmail"/>
+                                x:Name="EntryMatricNo"/>
                         </Frame>
                     </Frame>
                     <Frame 
@@ -75,14 +75,14 @@
                             CheckedChanged="CheckBox_CheckedChanged"/>
                         <Label 
                             Text="Show Password"
-                            FontAttributes="Bold"
                             TextColor="Black"
+                            FontAttributes="Bold"
                             FontSize="18"
                             RelativeLayout.XConstraint="50"
                             RelativeLayout.YConstraint="3"/>
                     </RelativeLayout>
                     <Button 
-                        Text="Login"
+                        Text="Register"
                         TextColor="White"
                         Margin="15"
                         BackgroundColor="Brown"
@@ -92,8 +92,8 @@
                         FontSize="18"
                         FontFamily="Cambria"
                         FontAttributes="Bold"
-                        Command="{Binding LoginCommand}"
-                        x:Name="LoginCommand"/>
+                        Command="{Binding RegisterCommand}"
+                        x:Name="RegisterCommand"/>
                 </StackLayout>
             </Grid>
         </StackLayout>

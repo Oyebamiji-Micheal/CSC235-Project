@@ -2,11 +2,11 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              BackgroundColor="White"
-             x:Class="CSCResult.Views.LoginPage">
-    
+             x:Class="CSCResult.Views.StudentApp">
+
     <Grid>
 
-        <Image Source="background.jgp" Aspect="AspectFill" HorizontalOptions="Center" Opacity="1"/>
+        <Image Source="student_background.jgp" Aspect="AspectFill" HorizontalOptions="Center" Opacity="1"/>
         <StackLayout>
             <Grid RowSpacing="25" RowDefinitions="Auto, Auto, Auto, Auto">
                 <StackLayout Grid.Row="4" Spacing="0">
@@ -14,8 +14,8 @@
                     <Label Text="" FontSize="30" TextColor="WhiteSmoke" HorizontalTextAlignment="Center" FontAttributes="Bold"/>
 
                     <Button 
-                        x:Name="StudentApp"
-                        Text="Student App"
+                        x:Name="StudentLogin"
+                        Text="Student Login"
                         TextColor="White"
                         Margin="15"
                         BackgroundColor="Brown"
@@ -25,11 +25,11 @@
                         FontSize="18"
                         FontFamily="Cambria"
                         FontAttributes="Bold"
-                        Clicked="StudentApp_Clicked"/>
+                        Clicked="StudentLogin_Clicked"/>
 
                     <Button 
-                        x:Name="AdminApp"
-                        Text="Admin App"
+                        x:Name="StudentRegistration"
+                        Text="Student Registration"
                         TextColor="Brown"
                         Margin="15"
                         BorderColor="Red"
@@ -41,7 +41,7 @@
                         FontSize="18"
                         FontFamily="Cambria"
                         FontAttributes="Bold"
-                        Clicked="AdminApp_Clicked"/>
+                        Clicked="StudentRegistration_Clicked"/>
                 </StackLayout>
             </Grid>
         </StackLayout>
