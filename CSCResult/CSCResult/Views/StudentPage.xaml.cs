@@ -16,5 +16,19 @@ namespace CSCResult.Views
 		{
 			InitializeComponent ();
 		}
-	}
+        private void OnLogoutButtonClicked(object sender, EventArgs e)
+        {
+            // Perform logout logic here
+        }
+
+        private void OnRegisterButtonClicked(object sender, EventArgs e)
+        {
+            // Perform register for course logic here
+        }
+
+        private void OnUpdateButtonClicked(object sender, EventArgs e)
+        {
+            // Perform update profile logic here
+        }
+    }
 }

@@ -1,12 +1,134 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:CSCResult.ViewModels"
              x:Class="CSCResult.Views.StudentPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to the Student Page!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Grid Margin="20,0,0,0" RowSpacing="40">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="Welcome" Grid.Row="0" Grid.Column="0" TextColor="White" FontSize="20"/>
+                <Label Text="MatricNo" Grid.Row="1" Grid.Column="0" FontSize="20" FontAttributes="Bold"/>
+                <Button Grid.Row="0" Grid.Column="2" Grid.RowSpan="2"
+                    Text="Logout"
+                    TextColor="White"
+                    Margin="15"
+                    BackgroundColor="Red"
+                    WidthRequest="18"
+                    HeightRequest="40"
+                    CornerRadius="20"
+                    FontSize="18"
+                    FontFamily="Cambria"
+                    FontAttributes="Bold"
+                    x:Name="LogoutCommand"/>
+            </Grid>
+
+            <Grid Grid.Row="1">
+                <Label 
+                    Text="Welcome to the University of Ibadan Student Page. Kindly update your profile if you have not done so" 
+                    TextColor="White" FontSize="20"/>
+            </Grid>
+
+            <Grid Grid.Row="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                
+                    <Label Grid.Row="0"
+                           Text="Name: "
+                           FontSize="20"
+                           FontAttributes="Bold" />
+                    <Label Text="Binding Name"
+                           Grid.Row="0"
+                           Grid.Column="1"
+                           FontSize="18" />
+
+                    <Label Text="Mode of Admission: "
+                           Grid.Row="1"
+                           FontSize="20"
+                           FontAttributes="Bold" />
+                    <Label Text="Binding ModeofAdmission"
+                           Grid.Row="1"
+                           Grid.Column="1"
+                           FontSize="18" />
+                    
+                    <Label Text="Faculty: "
+                           Grid.Row="2"
+                           FontSize="20"
+                           FontAttributes="Bold" />
+                    <Label Text="Binding Faculty"
+                           Grid.Row="2"
+                           Grid.Column="1"
+                           FontSize="18" />
+                    
+                    <Label Text="Department: "
+                           Grid.Row="3"
+                           FontSize="20"
+                           FontAttributes="Bold" />
+                    <Label Text="Binding Department"
+                           Grid.Row="3"
+                           Grid.Column="1"
+                           FontSize="18" />
+                    
+                    <Label Text="Date of Birth: "
+                           Grid.Row="4"
+                           FontSize="20"
+                           FontAttributes="Bold" />
+                    <Label Text="Binding DateOfBirth"
+                           Grid.Row="4"
+                           Grid.Column="1"
+                           FontSize="18" />
+                    
+                    <Label Text="State of Origin: "
+                           Grid.Row="5"
+                           FontSize="20"
+                           FontAttributes="Bold" />
+                    <Label Text="Binding StateOfOrigin"
+                           Grid.Row="5"
+                           Grid.Column="1"
+                           FontSize="18" />
+                    
+                    <Button Text="Update Profile"
+                            Grid.Row="6"
+                            FontSize="18"
+                            FontAttributes="Bold"
+                            HorizontalOptions="Start"
+                            VerticalOptions="Center"/>
+            </Grid>
+
+            <Grid Grid.Row="3">
+                <Button 
+                    Text="View Statement of Result"
+                    FontSize="18"
+                    FontAttributes="Bold"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center"/>
+            </Grid>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

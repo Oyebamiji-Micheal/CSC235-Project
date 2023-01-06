@@ -21,9 +21,5 @@ namespace CSCResult.Views
             await Navigation.PushAsync(new StudentLogin());
         }
 
-        async public void StudentRegistration_Clicked(object sender, EventArgs args)
-        {
-            await Navigation.PushAsync(new StudentRegistration());
-        }
     }
 }

@@ -26,22 +26,6 @@
                         FontFamily="Cambria"
                         FontAttributes="Bold"
                         Clicked="StudentLogin_Clicked"/>
-
-                    <Button 
-                        x:Name="StudentRegistration"
-                        Text="Student Registration"
-                        TextColor="Brown"
-                        Margin="15"
-                        BorderColor="Red"
-                        BorderWidth="1.5"
-                        BackgroundColor="White"
-                        WidthRequest="110" 
-                        HeightRequest="47"
-                        CornerRadius="30"
-                        FontSize="18"
-                        FontFamily="Cambria"
-                        FontAttributes="Bold"
-                        Clicked="StudentRegistration_Clicked"/>
                 </StackLayout>
             </Grid>
         </StackLayout>
