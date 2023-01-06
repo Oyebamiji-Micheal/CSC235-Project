@@ -51,7 +51,6 @@ namespace CSCResult.Services
             var student = (await client.Child("Students")
                 .OnceAsync<Student>()).Where(u => u.Object.MatricNo == matric_no)
                 .Where(u => u.Object.Password == passwd).FirstOrDefault();
-
             return (student != null);
         }
     }
