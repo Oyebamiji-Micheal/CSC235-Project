@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CSCResult.Views.AddLoginDetails">
+    <ContentPage.Content>
+        <StackLayout>
+            <Button Text="Add Students Details" x:Name="ButtonStudents" Clicked="ButtonStudents_Clicked"/>
+            <Button Text="Add Admin Details" x:Name="ButtonAdmins" Clicked="ButtonAdmins_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

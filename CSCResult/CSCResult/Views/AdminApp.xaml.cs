@@ -20,10 +20,5 @@ namespace CSCResult.Views
         {
             await Navigation.PushAsync(new AdminLogin());
         }
-
-        async public void AdminRegistration_Clicked(object sender, EventArgs args)
-        {
-            await Navigation.PushAsync(new AdminRegistration());
-        }
     }
 }

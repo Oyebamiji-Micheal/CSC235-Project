@@ -26,22 +26,6 @@
                         FontFamily="Cambria"
                         FontAttributes="Bold"
                         Clicked="AdminLogin_Clicked"/>
-
-                    <Button 
-                        x:Name="AdminRegistration"
-                        Text="Admin Registration"
-                        TextColor="Brown"
-                        Margin="15"
-                        BorderColor="Red"
-                        BorderWidth="1.5"
-                        BackgroundColor="White"
-                        WidthRequest="110" 
-                        HeightRequest="47"
-                        CornerRadius="30"
-                        FontSize="18"
-                        FontFamily="Cambria"
-                        FontAttributes="Bold"
-                        Clicked="AdminRegistration_Clicked"/>
                 </StackLayout>
             </Grid>
         </StackLayout>
