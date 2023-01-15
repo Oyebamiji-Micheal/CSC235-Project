@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 
 namespace CSCResult.Models
@@ -11,5 +12,6 @@ namespace CSCResult.Models
         public string Name { get; set; }
         public string Level { get; set; }
         public string AdmissionCategory { get; set; }
+
     }
 }
