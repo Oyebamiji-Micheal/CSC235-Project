@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using Firebase.Database;
 using Firebase.Database.Query;
+using Xamarin.Essentials;
 using System.Linq;
 
 using Xamarin.Forms.Xaml;
@@ -51,6 +52,18 @@ namespace CSCResult.Services
             var student = (await client.Child("Students")
                 .OnceAsync<Student>()).Where(u => u.Object.MatricNo == matric_no)
                 .Where(u => u.Object.Password == passwd).FirstOrDefault();
+
+            var profile = (await client.Child("StudentProfiles")
+                .OnceAsync<StudentProfile>()).Where(u => u.Object.MatricNo == matric_no);
+
+            foreach (var stn in profile)
+            {
+                Console.WriteLine("Sinners in the hand of Angry God");
+                Preferences.Set("Name", stn.Object.Name);
+                Preferences.Set("Level", stn.Object.Level);
+                Preferences.Set("AdmissionCategory", stn.Object.AdmissionCategory);
+            }  
+
             return (student != null);
         }
     }
