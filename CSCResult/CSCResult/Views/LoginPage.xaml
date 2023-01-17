@@ -7,14 +7,15 @@
     <Grid>
 
         <Image Source="background.jgp" Aspect="AspectFill" HorizontalOptions="Center" Opacity="1"/>
-        <StackLayout>
-            <Grid RowSpacing="25" RowDefinitions="Auto, Auto, Auto, Auto">
-                <StackLayout Grid.Row="4" Spacing="0">
-                    <Image Source="logo.png" WidthRequest="200"/>
-                    <Label Text="" FontSize="30" TextColor="WhiteSmoke" HorizontalTextAlignment="Center" FontAttributes="Bold"/>
+        <StackLayout BackgroundColor="White">
+            <Grid RowSpacing="45" RowDefinitions="Auto, Auto, Auto, Auto" BackgroundColor="Black">
+                <StackLayout Grid.Row="4" Spacing="25">
+                    <Image Source="logo.png" WidthRequest="100"/>
+                    <Label Text="Book of Life" FontSize="30" TextColor="WhiteSmoke" HorizontalTextAlignment="Center" FontAttributes="Bold"/>
 
                     <Button 
                         x:Name="StudentApp"
+                        Grid.Row="3"
                         Text="Student App"
                         TextColor="White"
                         Margin="15"
@@ -44,6 +45,9 @@
                         Clicked="AdminApp_Clicked"/>
                 </StackLayout>
             </Grid>
+            
+            
         </StackLayout>
     </Grid>
+    
 </ContentPage>

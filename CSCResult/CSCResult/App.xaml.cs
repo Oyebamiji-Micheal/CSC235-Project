@@ -11,9 +11,10 @@ namespace CSCResult
         {
             InitializeComponent();
 
-            MainPage = new AppShell();
+            // MainPage = new AppShell();
             // MainPage = new NavigationPage(new AddLoginDetails());
             // MainPage = new NavigationPage(new AddStudentProfileDetails());
+            MainPage = new NavigationPage(new StudentLogin());
         }
 
         protected override void OnStart()
