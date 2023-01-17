@@ -13,6 +13,7 @@ namespace CSCResult
 
             MainPage = new AppShell();
             // MainPage = new NavigationPage(new AddLoginDetails());
+            // MainPage = new NavigationPage(new AddStudentProfileDetails());
         }
 
         protected override void OnStart()

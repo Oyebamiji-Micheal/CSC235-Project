@@ -9,7 +9,7 @@ using CSCResult.Views;
 
 namespace CSCResult.ViewModels
 {
-    class StudentLoginViewModel : BaseViewModel
+    public class StudentLoginViewModel : BaseViewModel
     {
         private string _MatricNo;
         public string MatricNo

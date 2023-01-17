@@ -9,7 +9,7 @@ using CSCResult.Views;
 
 namespace CSCResult.ViewModels
 {
-    class AdminLoginViewModel : BaseViewModel
+    public class AdminLoginViewModel : BaseViewModel
     {
         private string _Email;
         public string Email

@@ -3,6 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:CSCResult.ViewModels"
              x:Class="CSCResult.Views.StudentPage">
+
+    <ContentPage.BindingContext>
+        <vm:StudentPageViewModel/>
+    </ContentPage.BindingContext>
+    
     <ContentPage.Content>
         <Grid Margin="20,0,0,0" RowSpacing="40">
             <Grid.RowDefinitions>
@@ -24,7 +29,7 @@
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
                 <Label Text="Welcome" Grid.Row="0" Grid.Column="0" TextColor="White" FontSize="20"/>
-                <Label Text="MatricNo" Grid.Row="1" Grid.Column="0" FontSize="20" FontAttributes="Bold"/>
+                <Label Text="{Binding Name}" Grid.Row="1" Grid.Column="0" FontSize="20" FontAttributes="Bold"/>
                 <Button Grid.Row="0" Grid.Column="2" Grid.RowSpan="2"
                     Text="Logout"
                     TextColor="White"
@@ -36,7 +41,7 @@
                     FontSize="18"
                     FontFamily="Cambria"
                     FontAttributes="Bold"
-                    x:Name="LogoutCommand"/>
+                   Command="{Binding LogoutCommand}"/>
             </Grid>
 
             <Grid Grid.Row="1">
@@ -58,67 +63,42 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
-                
-                    <Label Grid.Row="0"
+
+                <Label Grid.Row="0"
                            Text="Name: "
                            FontSize="20"
                            FontAttributes="Bold" />
-                    <Label Text="Binding Name"
+                <Label Text="{Binding Name}"
                            Grid.Row="0"
                            Grid.Column="1"
                            FontSize="18" />
 
-                    <Label Text="Mode of Admission: "
+                <Label Text="Matric No: "
                            Grid.Row="1"
                            FontSize="20"
                            FontAttributes="Bold" />
-                    <Label Text="Binding ModeofAdmission"
+                <Label Text="{Binding MatricNo}"
                            Grid.Row="1"
                            Grid.Column="1"
                            FontSize="18" />
-                    
-                    <Label Text="Faculty: "
+
+                <Label Text="Mode of Admission: "
                            Grid.Row="2"
                            FontSize="20"
                            FontAttributes="Bold" />
-                    <Label Text="Binding Faculty"
+                <Label Text="{Binding AdmissionCategory}"
                            Grid.Row="2"
                            Grid.Column="1"
                            FontSize="18" />
-                    
-                    <Label Text="Department: "
+
+                <Label Text="Level: "
                            Grid.Row="3"
                            FontSize="20"
                            FontAttributes="Bold" />
-                    <Label Text="Binding Department"
+                <Label Text="{Binding Level}"
                            Grid.Row="3"
                            Grid.Column="1"
                            FontSize="18" />
-                    
-                    <Label Text="Date of Birth: "
-                           Grid.Row="4"
-                           FontSize="20"
-                           FontAttributes="Bold" />
-                    <Label Text="Binding DateOfBirth"
-                           Grid.Row="4"
-                           Grid.Column="1"
-                           FontSize="18" />
-                    
-                    <Label Text="State of Origin: "
-                           Grid.Row="5"
-                           FontSize="20"
-                           FontAttributes="Bold" />
-                    <Label Text="Binding StateOfOrigin"
-                           Grid.Row="5"
-                           Grid.Column="1"
-                           FontSize="18" />
-                    
-                    <Button Text="Update Profile"
-                            Grid.Row="6"
-                            FontSize="18"
-                            FontAttributes="Bold"
-                            HorizontalOptions="Start"
-                            VerticalOptions="Center"/>
             </Grid>
 
             <Grid Grid.Row="3">
@@ -132,3 +112,4 @@
         </Grid>
     </ContentPage.Content>
 </ContentPage>
+
