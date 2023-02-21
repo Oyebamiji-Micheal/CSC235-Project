@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:CSCResult.ViewModels"
+             x:DataType="viewmodels:AddUpdateCoursePageViewModel"
+             Title="Add/Update Course"
+             x:Class="CSCResult.Views.AddUpdateCourse">
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry Placeholder="Course Code" Text="{Binding CourseDetail.CourseCode}" />
+            <Entry Placeholder="Course Description" Text="{Binding CourseDetail.CourseDescription}"  />
+            <Entry Placeholder="Course Unit" Text="{Binding CourseDetail.CourseUnit}"  />
+            <Picker x:Name="picker" Title="Lecturer Email" ItemsSource="{Binding EmailOptions}" SelectedItem="{Binding CourseDetail.AdminEmail}"/>
+            <Button Text="Save Details" Command="{Binding SaveCourseCommand}" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
