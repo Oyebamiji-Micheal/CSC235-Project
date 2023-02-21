@@ -20,6 +20,5 @@ namespace CSCResult.Views
         {
             await Navigation.PushAsync(new StudentLogin());
         }
-
     }
 }
