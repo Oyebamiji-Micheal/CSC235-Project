@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:CSCResult.ViewModels"
-             x:Class="CSCResult.Views.StudentPage">
+             x:Class="CSCResult.Views.StudentPage"
+             NavigationPage.HasNavigationBar="False">
 
     <ContentPage.BindingContext>
         <vm:StudentPageViewModel/>
@@ -11,6 +12,7 @@
     <ContentPage.Content>
         <Grid Margin="20,0,0,0" RowSpacing="40">
             <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
@@ -108,6 +110,17 @@
                     FontAttributes="Bold"
                     HorizontalOptions="Start"
                     VerticalOptions="Center"/>
+            </Grid>
+
+            <Grid Grid.Row="4">
+                <Button 
+                    x:Name="StudentCourses"
+                    Text="View Courses"
+                    FontSize="18"
+                    FontAttributes="Bold"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center"
+                    Clicked="ShowCourse_Clicked"/>
             </Grid>
         </Grid>
     </ContentPage.Content>
