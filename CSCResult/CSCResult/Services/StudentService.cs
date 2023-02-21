@@ -38,7 +38,7 @@ namespace CSCResult.Services
                     {
                         MatricNo = matric_no,
                         Password = passwd
-                    });
+                    });       
                 return true;
             }
             else
