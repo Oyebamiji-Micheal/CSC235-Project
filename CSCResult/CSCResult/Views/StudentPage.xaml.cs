@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -29,6 +28,11 @@ namespace CSCResult.Views
         private void OnUpdateButtonClicked(object sender, EventArgs e)
         {
             // Perform update profile logic here
+        }
+
+        async public void ShowCourse_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new CourseList());
         }
     }
 }

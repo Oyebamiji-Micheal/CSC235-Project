@@ -52,7 +52,7 @@ namespace CSCResult.ViewModels
                 return this._IsBusy;
             }
         }
-        
+
         private bool _Result;
         public bool Result
         {

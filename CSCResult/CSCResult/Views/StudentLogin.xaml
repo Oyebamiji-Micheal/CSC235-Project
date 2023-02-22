@@ -15,7 +15,6 @@
             <Grid RowSpacing="25" RowDefinitions="Auto, Auto, Auto, Auto">
                 <StackLayout Grid.Row="4" Spacing="0">
                     <Image Source="logo.png" WidthRequest="200"/>
-
                     <Frame 
                            BorderColor="Transparent"
                            BackgroundColor="White"

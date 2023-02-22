@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CSCResult.Views.CourseView"
+             BackgroundColor="White"
+             Title="Courses View"
+             NavigationPage.HasNavigationBar="False">
+    <StackLayout>
+
+        <Frame BackgroundColor="#2196F3"
+               Padding="10" 
+               CornerRadius="0">
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Registered Courses"
+                       TextColor="White"
+                       FontSize="22"
+                       VerticalOptions="CenterAndExpand" 
+                       HorizontalOptions="Start"/>
+                <ImageButton 
+                    x:Name="AddCourse"
+                    Source="add_icon_1.jpg"  
+                    HorizontalOptions="EndAndExpand"
+                    HeightRequest="35"
+                    BackgroundColor="Transparent"/>
+            </StackLayout>
+        </Frame>
+
+        <StackLayout>
+            <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+                <Label Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+            </Frame> 
+            <Label Text="Start developing now" FontSize="Title" Padding="30,10,30,10"/>
+            <Button Text="Add Employee" x:Name="addEmployee" Clicked="AddCourse_Clicked" />
+            <Button Text="Show All Employee" x:Name="showEmployee" Clicked="ShowCourse_Clicked" />
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

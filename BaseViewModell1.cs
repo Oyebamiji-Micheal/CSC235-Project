@@ -8,7 +8,6 @@ namespace CSCResult.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
-
         #region Properties
         private bool _isBusy;
         public bool IsBusy
@@ -31,16 +30,9 @@ namespace CSCResult.ViewModels
             return true;
         }
 
-        #region INotifyPropertyChanged
         public event PropertyChangedEventHandler PropertyChanged;
-        protected void OnPropertyChanged([CallerMemberName] string propertyName = "")
-        {
-            var changed = PropertyChanged;
-            if (changed == null)
-                return;
 
-            changed.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-        #endregion
+        public void OnPropertyChanged([CallerMemberName] string name = null) =>
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
     }
 }
