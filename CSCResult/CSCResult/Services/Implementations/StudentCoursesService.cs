@@ -70,6 +70,7 @@ namespace CSCResult.Services.Implementations
                 CourseCode = f.Object.CourseCode,
                 CourseUnit = f.Object.CourseUnit,
                 CourseDescription = f.Object.CourseDescription,
+                Score = f.Object.Score,
                 Key = f.Key
             }).ToList();
         }
