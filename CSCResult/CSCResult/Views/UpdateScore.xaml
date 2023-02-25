@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Update Student Score"
+             xmlns:viewmodels="clr-namespace:CSCResult.ViewModels"
+             x:DataType="viewmodels:UpdateScoreViewModel"
+             x:Class="CSCResult.Views.UpdateScore">
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry Placeholder="Course Code" Text="{Binding CourseDetail.CourseCode}" />
+            <Entry Placeholder="Course Description" Text="{Binding CourseDetail.CourseDescription}"  />
+            <Entry Placeholder="Course Unit" Text="{Binding CourseDetail.CourseUnit}"  />
+            <Entry Placeholder="Student Scores" Text="{Binding CourseDetail.Score}"  />
+            <Button Text="Save Details" Command="{Binding SaveCourseCommand}" />
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>
