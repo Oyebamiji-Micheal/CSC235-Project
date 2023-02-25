@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CSCResult.Views.StudentResultPage"
+             xmlns:viewmodels="clr-namespace:CSCResult.ViewModels"
+             x:DataType="viewmodels:CourseListPageViewModel"
+             NavigationPage.HasNavigationBar="False"
+             xmlns:models="clr-namespace:CSCResult.Models"
+             BackgroundColor="#F5F5F5">
+
+    <ContentPage.BindingContext>
+        <viewmodels:CourseListPageViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+
+        <StackLayout>
+            <!-- Page header -->
+            <BoxView HeightRequest="5" BackgroundColor="#2196F3"/>
+            <Frame BackgroundColor="White"
+                   BorderColor="#2196F3"
+                   Margin="10,10,10,0"
+                   HasShadow="False">
+                <Label Text="Student Statement of Result"
+                       TextColor="#2196F3"
+                       FontSize="24"
+                       Margin="20"/>
+            </Frame>
+
+            <!-- Result table -->
+            <StackLayout Margin="10,20,10,10"
+                         BackgroundColor="White"
+                         Padding="10,5">
+                <!-- Table header -->
+                <StackLayout Orientation="Horizontal"
+                             Padding="5,0"
+                             BackgroundColor="#2196F3"
+                             HeightRequest="30"
+                             VerticalOptions="CenterAndExpand">
+                    <Label Text="Course Code"
+                           TextColor="White"
+                           FontAttributes="Bold"
+                           FontSize="16"
+                           HorizontalOptions="StartAndExpand"/>
+                    <Label Text="Unit"
+                           TextColor="White"
+                           FontAttributes="Bold"
+                           FontSize="16"
+                           HorizontalOptions="StartAndExpand"/>
+                    <Label Text="Score"
+                           TextColor="White"
+                           FontAttributes="Bold"
+                           FontSize="16"
+                           HorizontalOptions="StartAndExpand"/>
+                    <Label Text="Grade Point"
+                           TextColor="White"
+                           FontAttributes="Bold"
+                           FontSize="16"
+                           HorizontalOptions="StartAndExpand"/>
+
+                </StackLayout>
+
+                <ActivityIndicator IsVisible="{Binding IsBusy}" IsRunning="True" />
+
+                <RefreshView Command="{Binding RefreshCommand}" IsRefreshing="{Binding IsRefreshing}">
+                    <!-- Result rows -->
+                    <CollectionView ItemsSource="{Binding Courses}">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate x:DataType="models:StudentCoursesModel">
+                                <StackLayout Orientation="Horizontal"
+                                             VerticalOptions="CenterAndExpand"
+                                             Padding="5,0">
+                                    <Label Text="{Binding CourseCode}"
+                                           FontSize="16"
+                                           TextColor="Black"
+                                           HorizontalOptions="StartAndExpand"/>
+                                    <Label Text="{Binding CourseUnit}"
+                                           FontSize="16"
+                                           HorizontalOptions="StartAndExpand"
+                                           TextColor="Black"/>
+                                    <Label Text="{Binding Score}"
+                                           FontSize="16"
+                                           HorizontalOptions="StartAndExpand"
+                                           TextColor="Black"/>
+                                    <Label Text="{Binding GradePoint}"
+                                           FontSize="16"
+                                           HorizontalOptions="StartAndExpand"
+                                           TextColor="Black"/>
+                                </StackLayout>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </RefreshView>
+            </StackLayout>
+
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>
