@@ -69,11 +69,13 @@ namespace CSCResult.ViewModels
 
         public Command LoginCommand { get; set; }
         public Command RegisterCommand { get; set; }
+        public Command NavigateToStudentLoginPageCommand { get; set; }
 
         public AdminLoginViewModel()
         {
             LoginCommand = new Command(async () => await LoginCommandAsync());
             RegisterCommand = new Command(async () => await RegisterCommandAsync());
+            NavigateToStudentLoginPageCommand = new Command(async () => await NavigateToStudentLoginPageAsync());
         }
 
         private async Task RegisterCommandAsync()
@@ -112,7 +114,7 @@ namespace CSCResult.ViewModels
                 Result = await adminService.LoginAdmin(Email, Password);
                 if (Result)
                 {
-                    Preferences.Set("Email", Email);
+                    Preferences.Set("AdminEmail", Email);
                     await Application.Current.MainPage.Navigation.PushModalAsync(new AdminPage());
                 }
                 else
@@ -128,6 +130,11 @@ namespace CSCResult.ViewModels
             {
                 IsBusy = false;
             }
+        }
+
+        private async Task NavigateToStudentLoginPageAsync()
+        {
+            await Application.Current.MainPage.Navigation.PushModalAsync(new StudentLogin());
         }
     }
 }
