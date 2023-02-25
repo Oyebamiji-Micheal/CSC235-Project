@@ -15,6 +15,90 @@ using Xamarin.Essentials;
 
 namespace CSCResult.ViewModels
 {
+    public class ScoreListPageViewModel : BaseViewModel
+    {
+        private bool _isRefreshing;
+        public bool IsRefreshing
+        {
+            get => _isRefreshing;
+            set => SetProperty(ref _isRefreshing, value);
+        }
+
+        private readonly IAdminService _studentCourseService;
+
+        public ObservableCollection<StudentCoursesModel> Courses { get; set; } = new ObservableCollection<StudentCoursesModel>();
+
+        #region Constructor
+        public ScoreListPageViewModel()
+        {
+            _studentCourseService = DependencyService.Resolve<IAdminService>();
+            GetAllCourses();
+        }
+        #endregion
+
+        #region Methods
+        private void GetAllCourses()
+        {
+            IsBusy = true;
+            Task.Run(async () =>
+            {
+                var courseList = await _studentCourseService.GetAllCourses();
+                Device.BeginInvokeOnMainThread(() =>
+                {
+
+                    Courses.Clear();
+                    if (courseList?.Count > 0)
+                    {
+                        foreach (var course in courseList)
+                        {
+                            Courses.Add(course);
+                        }
+                    }
+                    IsBusy = IsRefreshing = false;
+                });
+
+            });
+        }
+        #endregion
+
+        #region Commands
+
+        public ICommand RefreshCommand => new Command(() =>
+        {
+            IsRefreshing = true;
+            GetAllCourses();
+        });
+
+        public ICommand SelectedCourseCommand => new Command<StudentCoursesModel>(async (course) =>
+        {
+            if (course != null)
+            {
+                var response = await App.Current.MainPage.DisplayActionSheet("Options!", "Cancel", null, "Update Score", "Delete Score");
+
+                if (response == "Update Score")
+                {
+                    await App.Current.MainPage.Navigation.PushAsync(new UpdateScore(course));
+                }
+                else if (response == "Delete Score")
+                {
+                    IsBusy = true;
+                    bool deleteResponse = await _studentCourseService.DeleteCourse(course.Key);
+                    if (deleteResponse)
+                    {
+                        GetAllCourses();
+                    }
+                }
+            }
+        });
+        #endregion
+    }
+}
+
+/*
+
+
+namespace CSCResult.ViewModels
+{
     public class CourseListPageViewModel : BaseViewModel
     {
         #region Properties
@@ -47,23 +131,12 @@ namespace CSCResult.ViewModels
                 var courseList = await _studentCourseService.GetAllCourses();
                 Device.BeginInvokeOnMainThread(() =>
                 {
+
                     Courses.Clear();
                     if (courseList?.Count > 0)
                     {
                         foreach (var course in courseList)
                         {
-                            if (course.Score >= 70)
-                                course.GradePoint = "A";
-                            else if (course.Score >= 60)
-                                course.GradePoint = "B";
-                            else if (course.Score >= 50)
-                                course.GradePoint = "C";
-                            else if (course.Score >= 45)
-                                course.GradePoint = "D";
-                            else if (course.Score >= 40)
-                                course.GradePoint = "E";
-                            else
-                                course.GradePoint = "F";
                             Courses.Add(course);
                         }
                     }
@@ -106,3 +179,4 @@ namespace CSCResult.ViewModels
         #endregion
     }
 }
+*/

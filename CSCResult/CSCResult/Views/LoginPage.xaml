@@ -43,6 +43,8 @@
                         FontAttributes="Bold"
                         Clicked="AdminApp_Clicked"/>
                 </StackLayout>
+
+               
             </Grid>
         </StackLayout>
     </Grid>

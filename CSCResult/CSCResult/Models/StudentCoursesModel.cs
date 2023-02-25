@@ -11,6 +11,8 @@ namespace CSCResult.Models
         public string CourseDescription { get; set; } 
         public string MatricNo{ get; set; }
         public string CourseUnit { get; set; } // It is assumed that no calculation is done on this attribute
+        public int Score { get; set; }
+        public string GradePoint { get; set; }
         public string AdminEmail { get; set; }
     }
 }

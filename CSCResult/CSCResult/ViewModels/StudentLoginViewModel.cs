@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using CSCResult.Views;
+using System.Windows.Input;
 
 namespace CSCResult.ViewModels
 {
@@ -69,11 +70,13 @@ namespace CSCResult.ViewModels
 
         public Command LoginCommand { get; set; }
         public Command RegisterCommand { get; set; }
+        public Command NavigateToAdminLoginPageCommand { get; set; }
 
         public StudentLoginViewModel()
         {
             LoginCommand = new Command(async () => await LoginCommandAsync());
             RegisterCommand = new Command(async () => await RegisterCommandAsync());
+            NavigateToAdminLoginPageCommand = new Command(async () => await NavigateToAdminLoginPageAsync());
         }
 
         private async Task RegisterCommandAsync()
@@ -128,6 +131,11 @@ namespace CSCResult.ViewModels
             {
                 IsBusy = false;
             }
+        }
+
+        private async Task NavigateToAdminLoginPageAsync()
+        {
+            await Application.Current.MainPage.Navigation.PushModalAsync(new AdminLogin());
         }
     }
 }
