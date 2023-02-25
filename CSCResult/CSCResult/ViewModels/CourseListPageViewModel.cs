@@ -47,12 +47,23 @@ namespace CSCResult.ViewModels
                 var courseList = await _studentCourseService.GetAllCourses();
                 Device.BeginInvokeOnMainThread(() =>
                 {
-
                     Courses.Clear();
                     if (courseList?.Count > 0)
                     {
                         foreach (var course in courseList)
                         {
+                            if (course.Score >= 70)
+                                course.GradePoint = "A";
+                            else if (course.Score >= 60)
+                                course.GradePoint = "B";
+                            else if (course.Score >= 50)
+                                course.GradePoint = "C";
+                            else if (course.Score >= 45)
+                                course.GradePoint = "D";
+                            else if (course.Score >= 40)
+                                course.GradePoint = "E";
+                            else
+                                course.GradePoint = "F";
                             Courses.Add(course);
                         }
                     }
