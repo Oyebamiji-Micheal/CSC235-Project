@@ -102,7 +102,7 @@
             </Grid>
 
             <StackLayout Grid.Row="7" Spacing="2">
-                <Label Text="--------Login as Student----------" 
+                <Label Text="Login as Student"
                            FontSize="20" 
                            TextColor="Blue"
                            FontAttributes="Bold"

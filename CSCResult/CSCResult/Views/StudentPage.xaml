@@ -3,53 +3,64 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:CSCResult.ViewModels"
              x:Class="CSCResult.Views.StudentPage"
-             NavigationPage.HasNavigationBar="False">
-
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="White">
+  
     <ContentPage.BindingContext>
         <vm:StudentPageViewModel/>
     </ContentPage.BindingContext>
-    
+
     <ContentPage.Content>
-        <Grid Margin="20,0,0,0" RowSpacing="40">
+        <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="130"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
+
+            <Grid BackgroundColor="Blue" Grid.Row="0">
+                <!-- add content to first column here -->
+                <Label
+                    Margin="30"
+                    Text="Welcome"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    FontSize="30"
+                    HorizontalTextAlignment="Center"/>
+            </Grid>
 
             <Grid Grid.Row="0">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="Auto"/>
-                </Grid.ColumnDefinitions>
-                <Label Text="Welcome" Grid.Row="0" Grid.Column="0" TextColor="White" FontSize="20"/>
-                <Label Text="{Binding Name}" Grid.Row="1" Grid.Column="0" FontSize="20" FontAttributes="Bold"/>
-                <Button Grid.Row="0" Grid.Column="2" Grid.RowSpan="2"
-                    Text="Logout"
-                    TextColor="White"
-                    Margin="15"
-                    BackgroundColor="Red"
-                    WidthRequest="18"
-                    HeightRequest="40"
-                    CornerRadius="20"
-                    FontSize="18"
-                    FontFamily="Cambria"
-                    FontAttributes="Bold"
-                   Command="{Binding LogoutCommand}"/>
+                <!-- add content to second column here -->
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="100"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Image Source="profile_pic_placeholder.jpg"
+                           Grid.Row="1"
+                           HeightRequest="150"
+                           WidthRequest="200"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"/>
+                </Grid>
             </Grid>
 
             <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
                 <Label 
-                    Text="Welcome to the University of Ibadan Student Page. Kindly update your profile if you have not done so" 
-                    TextColor="White" FontSize="20"/>
+                    Text="{Binding Name}"
+                    Grid.Row="4"
+                    TextColor="Black"
+                    FontSize="22" 
+                    HorizontalTextAlignment="Center"
+                    VerticalTextAlignment="Center"
+                    FontAttributes="Bold"/>
             </Grid>
 
             <Grid Grid.Row="2">
@@ -57,73 +68,123 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
-                <Label Grid.Row="0"
-                           Text="Name: "
-                           FontSize="20"
-                           FontAttributes="Bold" />
-                <Label Text="{Binding Name}"
-                           Grid.Row="0"
-                           Grid.Column="1"
-                           FontSize="18" />
-
-                <Label Text="Matric No: "
-                           Grid.Row="1"
-                           FontSize="20"
-                           FontAttributes="Bold" />
-                <Label Text="{Binding MatricNo}"
-                           Grid.Row="1"
-                           Grid.Column="1"
-                           FontSize="18" />
-
-                <Label Text="Mode of Admission: "
-                           Grid.Row="2"
-                           FontSize="20"
-                           FontAttributes="Bold" />
-                <Label Text="{Binding AdmissionCategory}"
-                           Grid.Row="2"
-                           Grid.Column="1"
-                           FontSize="18" />
-
-                <Label Text="Level: "
-                           Grid.Row="3"
-                           FontSize="20"
-                           FontAttributes="Bold" />
-                <Label Text="{Binding Level}"
-                           Grid.Row="3"
-                           Grid.Column="1"
-                           FontSize="18" />
+                <Label 
+                    Text="{Binding Level, StringFormat='{}{0}Lvl'}"
+                    Grid.Row="3"
+                    Grid.Column="0"
+                    TextColor="Black"
+                    FontSize="20" 
+                    HorizontalTextAlignment="Center"
+                    VerticalTextAlignment="Center"
+                    FontAttributes="Bold"/>
+                <Label 
+                    Text="{Binding MatricNo}"
+                    Grid.Row="3"
+                    Grid.Column="1"
+                    TextColor="Blue"
+                    FontSize="20" 
+                    HorizontalTextAlignment="Center"
+                    VerticalTextAlignment="Center"
+                    FontAttributes="Bold"/>
+                <Label 
+                    Text="{Binding AdmissionCategory}"
+                    Grid.Row="3"
+                    Grid.Column="2"
+                    TextColor="Black"
+                    FontSize="20" 
+                    HorizontalTextAlignment="Center"
+                    VerticalTextAlignment="Center"
+                    FontAttributes="Bold"/>
             </Grid>
 
             <Grid Grid.Row="3">
-                <Button 
-                    Text="View Statement of Result"
-                    FontSize="18"
-                    FontAttributes="Bold"
-                    HorizontalOptions="Start"
-                    VerticalOptions="Center"
-                    Clicked="ShowResult_Clicked"/>
+                <!-- add content to second column here -->
+                <!-- add content to second column here -->
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="50"/>
+                    </Grid.RowDefinitions>
+
+                    <Frame 
+                        Grid.Row="2"
+                        BorderColor="White"
+                        BackgroundColor="GhostWhite"
+                        HeightRequest="100"
+                        Margin="30, 0, 30, 0"
+                        CornerRadius="5">
+                        <Image Source="courses.jpg"
+                            HeightRequest="150"
+                            WidthRequest="200"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer 
+                                    Tapped="ShowCourse_Clicked"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </Frame>
+                    <Label 
+                        Text="Courses"
+                        Grid.Row="3"
+                        TextColor="Black"
+                        FontSize="23" 
+                        HorizontalTextAlignment="Center"
+                        VerticalTextAlignment="Center"
+                        FontAttributes="Bold"/>
+
+                </Grid>
             </Grid>
 
             <Grid Grid.Row="4">
-                <Button 
-                    x:Name="StudentCourses"
-                    Text="View Courses"
-                    FontSize="18"
-                    FontAttributes="Bold"
-                    HorizontalOptions="Start"
-                    VerticalOptions="Center"
-                    Clicked="ShowCourse_Clicked"/>
+                <!-- add content to second column here -->
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="50"/>
+                    </Grid.RowDefinitions>
+
+                    <Frame 
+                        Grid.Row="2"
+                        BorderColor="White"
+                        BackgroundColor="GhostWhite"
+                        Margin="30, 0, 30, 0"
+                        HeightRequest="100"
+                        CornerRadius="5">
+                        <Image Source="result.jpg"
+                        HeightRequest="150"
+                        WidthRequest="200"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer 
+                                    Tapped="ShowResult_Clicked"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </Frame>
+                    <Label 
+                        Text="Result"
+                        Grid.Row="3"
+                        TextColor="Black"
+                        FontSize="23" 
+                        HorizontalTextAlignment="Center"
+                        VerticalTextAlignment="Center"
+                        FontAttributes="Bold"/>
+                </Grid>
             </Grid>
+
+
         </Grid>
     </ContentPage.Content>
 </ContentPage>
-

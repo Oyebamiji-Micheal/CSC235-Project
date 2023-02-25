@@ -6,7 +6,7 @@
              x:DataType="viewmodels:CourseListPageViewModel"
              x:Class="CSCResult.Views.CourseList"
              NavigationPage.HasNavigationBar="False"
-             BackgroundColor="Black">
+             BackgroundColor="White">
 
     <ContentPage.BindingContext>
         <viewmodels:CourseListPageViewModel/>
@@ -18,7 +18,7 @@
             <Frame BackgroundColor="#2196F3"
                CornerRadius="0">
                 <StackLayout Orientation="Horizontal">
-                    <Label Text="Registered Course"
+                    <Label Text="Registered Courses"
                        TextColor="White"
                        FontSize="22"
                        VerticalOptions="CenterAndExpand" 
@@ -33,43 +33,44 @@
                 </StackLayout>
             </Frame>
 
-            <StackLayout Margin="10,0,10,0">
+            <StackLayout Margin="10,10,10,0">
                 <ActivityIndicator IsVisible="{Binding IsBusy}" IsRunning="True" />
-                
+
                 <RefreshView Command="{Binding RefreshCommand}" IsRefreshing="{Binding IsRefreshing}" >
                     <CollectionView ItemsSource="{Binding Courses}">
                         <CollectionView.ItemTemplate>
                             <DataTemplate x:DataType="models:StudentCoursesModel">
-                                <StackLayout Margin="10,5,10,0">
-                                    <StackLayout Orientation="Horizontal">
-                                        <Label Text="Course Code: " />
-                                        <Label Text="{Binding CourseCode}" />
+                                <Frame Margin="0,10,0,0" Padding="10" BackgroundColor="White" CornerRadius="5" HasShadow="True">
+                                    <StackLayout>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="Course Code: " TextColor="Black" />
+                                            <Label Text="{Binding CourseCode}" TextColor="Black" />
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="Course Description: " TextColor="Black" />
+                                            <Label Text="{Binding CourseDescription}" TextColor="Black" />
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="Unit: " TextColor="Black" />
+                                            <Label Text="{Binding CourseUnit}" TextColor="Black" />
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="Lecturer Email: " TextColor="Black" />
+                                            <Label Text="{Binding AdminEmail}" TextColor="Black" />
+                                        </StackLayout>
+                                        <BoxView HeightRequest="1" Color="Gray" />
+                                        <StackLayout.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding Source={x:RelativeSource AncestorType={x:Type viewmodels:CourseListPageViewModel}},Path=SelectedCourseCommand}" CommandParameter="{Binding .}" />
+                                        </StackLayout.GestureRecognizers>
                                     </StackLayout>
-                                    <StackLayout Orientation="Horizontal">
-                                        <Label Text="Course Description: " />
-                                        <Label Text="{Binding CourseDescription}" />
-                                    </StackLayout>
-                                    <StackLayout Orientation="Horizontal">
-                                        <Label Text="Unit: " />
-                                        <Label Text="{Binding CourseUnit}" />
-                                    </StackLayout>
-                                    <StackLayout Orientation="Horizontal">
-                                        <Label Text="Lecturer Email: " />
-                                        <Label Text="{Binding AdminEmail}" />
-                                    </StackLayout>
-                                    <BoxView HeightRequest="1" Color="Gray" />
-
-                                    <StackLayout.GestureRecognizers>
-                                        <TapGestureRecognizer Command="{Binding Source={x:RelativeSource AncestorType={x:Type viewmodels:CourseListPageViewModel}},Path=SelectedCourseCommand}" CommandParameter="{Binding .}" />
-                                    </StackLayout.GestureRecognizers>
-                                </StackLayout>
+                                </Frame>
                             </DataTemplate>
                         </CollectionView.ItemTemplate>
                     </CollectionView>
                 </RefreshView>
             </StackLayout>
-            
+
         </StackLayout>
-        
+
     </ContentPage.Content>
 </ContentPage>

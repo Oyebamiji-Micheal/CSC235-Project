@@ -1,18 +1,41 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             Title="Update Student Score"
              xmlns:viewmodels="clr-namespace:CSCResult.ViewModels"
              x:DataType="viewmodels:UpdateScoreViewModel"
-             x:Class="CSCResult.Views.UpdateScore">
+             Title="Add/Update Course"
+             x:Class="CSCResult.Views.UpdateScore"
+             BackgroundColor="White">
     <ContentPage.Content>
-        <StackLayout>
-            <Entry Placeholder="Course Code" Text="{Binding CourseDetail.CourseCode}" />
-            <Entry Placeholder="Course Description" Text="{Binding CourseDetail.CourseDescription}"  />
-            <Entry Placeholder="Course Unit" Text="{Binding CourseDetail.CourseUnit}"  />
-            <Entry Placeholder="Student Scores" Text="{Binding CourseDetail.Score}"  />
-            <Button Text="Save Details" Command="{Binding SaveCourseCommand}" />
+        <StackLayout Padding="20">
+            <Frame CornerRadius="5"
+                   BorderColor="Black"
+                   BackgroundColor="Gray"
+                   Margin="0,20,0,0">
+                <StackLayout>
+                    <Entry Placeholder="Course Code" 
+                           PlaceholderColor="White"
+                           Text="{Binding CourseDetail.CourseCode}" 
+                           TextColor="White"/>
+                    <Entry Placeholder="Course Description"
+                           PlaceholderColor="White"
+                           Text="{Binding CourseDetail.CourseDescription}"  
+                           TextColor="White"/>
+                    <Entry Placeholder="Course Unit" 
+                           PlaceholderColor="White"
+                           Text="{Binding CourseDetail.CourseUnit}"  
+                           TextColor="White"/>
+                    <Entry Placeholder="Student Score" 
+                           PlaceholderColor="White"
+                           Text="{Binding CourseDetail.Score}"  
+                           TextColor="White"/>
+                    <Button Text="Save Details" 
+                            Command="{Binding SaveCourseCommand}" 
+                            BackgroundColor="White"
+                            TextColor="Black"
+                            Margin="0,10,0,0"/>
+                </StackLayout>
+            </Frame>
         </StackLayout>
-
     </ContentPage.Content>
 </ContentPage>
