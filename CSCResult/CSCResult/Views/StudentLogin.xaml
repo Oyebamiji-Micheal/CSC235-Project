@@ -2,7 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:CSCResult.ViewModels"
-             x:Class="CSCResult.Views.StudentLogin">
+             x:Class="CSCResult.Views.StudentLogin"
+             NavigationPage.HasNavigationBar="False">
+
 
     <ContentPage.BindingContext>
         <vm:StudentLoginViewModel/>
@@ -10,25 +12,33 @@
 
 
     <Grid>
-        <Image Source="student_background.jgp" Aspect="AspectFill" HorizontalOptions="Center" Opacity="1"/>
-        <StackLayout>
-            <Grid RowSpacing="25" RowDefinitions="Auto, Auto, Auto, Auto">
-                <StackLayout Grid.Row="4" Spacing="0">
-                    <Image Source="logo.png" WidthRequest="200"/>
+
+        <StackLayout BackgroundColor="White">
+            <Grid RowSpacing="32" RowDefinitions="Auto, Auto, Auto, Auto">
+                <StackLayout Grid.Row="4" Spacing="2">
+                    <Image Source="logo.png" WidthRequest="150"/>
+                    <Label Text="Students Login" 
+                           FontSize="24" 
+                           TextColor="Black" 
+                           FontAttributes="Bold" 
+                           VerticalTextAlignment="Center" 
+                           HorizontalTextAlignment="Center"/>
                     <Frame 
                            BorderColor="Transparent"
                            BackgroundColor="White"
                            Margin="15"
                            Padding="0"
-                           HeightRequest="70"
+                           HeightRequest="60"
                            CornerRadius="50">
                         <Frame
                             BorderColor="Black"
                             BackgroundColor="White"
                             Margin="1"
                             Padding="25,0,25,0"
-                            HeightRequest="60"
-                            CornerRadius="60">
+                            HeightRequest="40"
+                            CornerRadius="60"
+                            
+                            >
                             <Entry 
                                 TextColor="Black"
                                 FontSize="18"
@@ -45,14 +55,14 @@
                            BackgroundColor="Transparent"
                            Margin="15"
                            Padding="0"
-                           HeightRequest="70"
+                           HeightRequest="60"
                            CornerRadius="50">
                         <Frame
                             BorderColor="Black"
                             BackgroundColor="white"
                             Margin="1"
                             Padding="25,0,25,0"
-                            HeightRequest="60"
+                            HeightRequest="40"
                             CornerRadius="50">
                             <Entry 
                                 TextColor="Black"
@@ -84,7 +94,7 @@
                         Text="Login"
                         TextColor="White"
                         Margin="15"
-                        BackgroundColor="Brown"
+                        BackgroundColor="Blue"
                         WidthRequest="110" 
                         HeightRequest="47"
                         CornerRadius="30"
@@ -94,7 +104,22 @@
                         Command="{Binding LoginCommand}"
                         x:Name="LoginCommand"/>
                 </StackLayout>
+
             </Grid>
+            
+            <StackLayout Grid.Row="7" Spacing="2">
+                <Label Text="--------Login as Admin----------" 
+                           FontSize="20" 
+                           TextColor="Blue"
+                           FontAttributes="Bold"
+                           VerticalTextAlignment="Center" 
+                           HorizontalTextAlignment="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding NavigateToAdminLoginPageCommand}" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+
         </StackLayout>
     </Grid>
 </ContentPage>

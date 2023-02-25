@@ -34,5 +34,10 @@ namespace CSCResult.Views
         {
             await Navigation.PushModalAsync(new CourseList());
         }
+
+        async public void ShowResult_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new StudentResultPage());
+        }
     }
 }

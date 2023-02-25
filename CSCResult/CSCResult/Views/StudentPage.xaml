@@ -109,7 +109,8 @@
                     FontSize="18"
                     FontAttributes="Bold"
                     HorizontalOptions="Start"
-                    VerticalOptions="Center"/>
+                    VerticalOptions="Center"
+                    Clicked="ShowResult_Clicked"/>
             </Grid>
 
             <Grid Grid.Row="4">
