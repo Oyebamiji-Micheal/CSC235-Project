@@ -68,8 +68,11 @@ namespace CSCResult.ViewModels
         {
             if (IsBusy) return;
             IsBusy = true;
+
             var matric_no = Preferences.Get("MatricNo", String.Empty);
             CourseDetail.MatricNo = matric_no;
+            // CourseDetail.Score = 0;
+
             bool res = await _studentCourseService.AddOrUpdateCourse(CourseDetail);
             if (res)
             {
@@ -81,7 +84,7 @@ namespace CSCResult.ViewModels
                 else
                 {
                     CourseDetail = new StudentCoursesModel() { };
-                    await App.Current.MainPage.DisplayAlert("Success!", "Course added successfully.", "Ok");
+                    await App.Current.MainPage.DisplayAlert("Success!", "Course Added successfully.", "Ok");
                 }
             }
             IsBusy = false;
