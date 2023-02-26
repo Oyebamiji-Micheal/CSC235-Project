@@ -77,7 +77,7 @@ namespace CSCResult.ViewModels
 
                 if (response == "Update Score")
                 {
-                    await App.Current.MainPage.Navigation.PushAsync(new UpdateScore(course));
+                    await App.Current.MainPage.Navigation.PushModalAsync(new UpdateScore(course));
                 }
                 else if (response == "Delete Score")
                 {

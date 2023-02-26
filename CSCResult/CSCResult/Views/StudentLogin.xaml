@@ -17,7 +17,7 @@
             <Grid RowSpacing="32" RowDefinitions="Auto, Auto, Auto, Auto">
                 <StackLayout Grid.Row="4" Spacing="2">
                     <Image Source="logo.png" WidthRequest="150"/>
-                    <Label Text="Students Login" 
+                    <Label Text="Student Login" 
                            FontSize="24" 
                            TextColor="Black" 
                            FontAttributes="Bold" 
@@ -36,9 +36,7 @@
                             Margin="1"
                             Padding="25,0,25,0"
                             HeightRequest="40"
-                            CornerRadius="60"
-                            
-                            >
+                            CornerRadius="60">
                             <Entry 
                                 TextColor="Black"
                                 FontSize="18"
@@ -108,12 +106,12 @@
             </Grid>
             
             <StackLayout Grid.Row="7" Spacing="2">
-                <Label Text="--------Login as Admin----------" 
-                           FontSize="20" 
-                           TextColor="Blue"
-                           FontAttributes="Bold"
-                           VerticalTextAlignment="Center" 
-                           HorizontalTextAlignment="Center">
+                <Label Text="Login as Admin" 
+                       FontSize="20" 
+                       TextColor="Blue"
+                       FontAttributes="Bold"
+                       VerticalTextAlignment="Center" 
+                       HorizontalTextAlignment="Center">    
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding NavigateToAdminLoginPageCommand}" />
                     </Label.GestureRecognizers>

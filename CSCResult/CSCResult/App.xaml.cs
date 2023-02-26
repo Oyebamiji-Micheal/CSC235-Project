@@ -22,6 +22,7 @@ namespace CSCResult
             // MainPage = new NavigationPage(new AddCourse());
             // MainPage = new NavigationPage(new StudentPage());
             // MainPage = new NavigationPage(new StudentResultPage());
+            // MainPage = new NavigationPage(new AddUpdateCourse());
             DependencyService.Register<ICourseService, StudentCoursesService>();
             DependencyService.Register<IAdminService, AdminService>();
         }

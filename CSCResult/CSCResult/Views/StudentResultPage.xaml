@@ -16,83 +16,100 @@
 
         <StackLayout>
             <!-- Page header -->
-            <BoxView HeightRequest="5" BackgroundColor="#2196F3"/>
-            <Frame BackgroundColor="White"
+            <Frame BackgroundColor="DarkBlue"
                    BorderColor="#2196F3"
-                   Margin="10,10,10,0"
+                   Margin="0,0,0,0"
                    HasShadow="False">
                 <Label Text="Student Statement of Result"
-                       TextColor="#2196F3"
+                       TextColor="White"
                        FontSize="24"
-                       Margin="20"/>
+                       VerticalTextAlignment="Center"
+                       HorizontalTextAlignment="Center"/>
             </Frame>
 
+            <StackLayout Padding="20">
             <!-- Result table -->
-            <StackLayout Margin="10,20,10,10"
+                <Frame CornerRadius="5"
+                   BorderColor="Gray"
+                   BackgroundColor="White"
+                   Margin="0,20,0,0">
+
+                    <StackLayout Margin="0"
                          BackgroundColor="White"
-                         Padding="10,5">
-                <!-- Table header -->
-                <StackLayout Orientation="Horizontal"
-                             Padding="5,0"
-                             BackgroundColor="#2196F3"
+                         Padding="0">
+                        <!-- Table header -->
+                        <StackLayout Orientation="Horizontal"
+                             BackgroundColor="White"
                              HeightRequest="30"
                              VerticalOptions="CenterAndExpand">
-                    <Label Text="Course Code"
-                           TextColor="White"
-                           FontAttributes="Bold"
-                           FontSize="16"
-                           HorizontalOptions="StartAndExpand"/>
-                    <Label Text="Unit"
-                           TextColor="White"
-                           FontAttributes="Bold"
-                           FontSize="16"
-                           HorizontalOptions="StartAndExpand"/>
-                    <Label Text="Score"
-                           TextColor="White"
-                           FontAttributes="Bold"
-                           FontSize="16"
-                           HorizontalOptions="StartAndExpand"/>
-                    <Label Text="Grade Point"
-                           TextColor="White"
-                           FontAttributes="Bold"
-                           FontSize="16"
-                           HorizontalOptions="StartAndExpand"/>
+                            <Label Text="Course Code"
+                               TextColor="Black"
+                               FontAttributes="Bold"
+                               FontSize="16"
+                               HorizontalOptions="StartAndExpand"
+                               HorizontalTextAlignment="Center"/>
+                            <Label Text="Unit"
+                               TextColor="Black"
+                               FontAttributes="Bold"
+                               FontSize="16"
+                               HorizontalOptions="StartAndExpand"
+                               HorizontalTextAlignment="Center"/>
+                            <Label Text="Score"
+                               TextColor="Black"
+                               FontAttributes="Bold"
+                               FontSize="16"
+                               HorizontalOptions="StartAndExpand"
+                               HorizontalTextAlignment="Center"/>
+                            <Label Text="Grade Point"
+                               TextColor="Black"
+                               FontAttributes="Bold"
+                               FontSize="16"
+                               HorizontalOptions="StartAndExpand"
+                               HorizontalTextAlignment="Center"/>
+                        </StackLayout>
+                        <ActivityIndicator IsVisible="{Binding IsBusy}" IsRunning="True" />
 
-                </StackLayout>
-
-                <ActivityIndicator IsVisible="{Binding IsBusy}" IsRunning="True" />
-
-                <RefreshView Command="{Binding RefreshCommand}" IsRefreshing="{Binding IsRefreshing}">
-                    <!-- Result rows -->
-                    <CollectionView ItemsSource="{Binding Courses}">
-                        <CollectionView.ItemTemplate>
-                            <DataTemplate x:DataType="models:StudentCoursesModel">
-                                <StackLayout Orientation="Horizontal"
+                        <RefreshView Command="{Binding RefreshCommand}" IsRefreshing="{Binding IsRefreshing}">
+                            <!-- Result rows -->
+                            <CollectionView ItemsSource="{Binding Courses}">
+                                <CollectionView.ItemTemplate>
+                                    <DataTemplate x:DataType="models:StudentCoursesModel">
+                                        <StackLayout Orientation="Horizontal"
                                              VerticalOptions="CenterAndExpand"
-                                             Padding="5,0">
-                                    <Label Text="{Binding CourseCode}"
-                                           FontSize="16"
-                                           TextColor="Black"
-                                           HorizontalOptions="StartAndExpand"/>
-                                    <Label Text="{Binding CourseUnit}"
-                                           FontSize="16"
-                                           HorizontalOptions="StartAndExpand"
-                                           TextColor="Black"/>
-                                    <Label Text="{Binding Score}"
-                                           FontSize="16"
-                                           HorizontalOptions="StartAndExpand"
-                                           TextColor="Black"/>
-                                    <Label Text="{Binding GradePoint}"
-                                           FontSize="16"
-                                           HorizontalOptions="StartAndExpand"
-                                           TextColor="Black"/>
-                                </StackLayout>
-                            </DataTemplate>
-                        </CollectionView.ItemTemplate>
-                    </CollectionView>
-                </RefreshView>
+                                             Padding="5,0"
+                                             Margin="0,0,0,10">
+                                            <Label Text="{Binding CourseCode}"
+                                               FontSize="16"
+                                               TextColor="Black"
+                                               HorizontalOptions="StartAndExpand"
+                                               VerticalTextAlignment="Center"
+                                               HorizontalTextAlignment="Center"/>
+                                            <Label Text="{Binding CourseUnit}"
+                                               FontSize="16"
+                                               HorizontalOptions="StartAndExpand"
+                                               TextColor="Black"
+                                               HorizontalTextAlignment="Center"
+                                               VerticalTextAlignment="Center"/>
+                                            <Label Text="{Binding Score}"
+                                               FontSize="16"
+                                               HorizontalOptions="StartAndExpand"
+                                               TextColor="Black"
+                                               VerticalTextAlignment="Center"
+                                               HorizontalTextAlignment="Center"/>
+                                            <Label Text="{Binding GradePoint}"
+                                               FontSize="16"
+                                               HorizontalOptions="StartAndExpand"
+                                               TextColor="Black"
+                                               VerticalTextAlignment="Center"
+                                               HorizontalTextAlignment="Center"/>
+                                        </StackLayout>
+                                    </DataTemplate>
+                                </CollectionView.ItemTemplate>
+                            </CollectionView>
+                        </RefreshView>
+                    </StackLayout>
+                </Frame>
             </StackLayout>
-
         </StackLayout>
 
     </ContentPage.Content>

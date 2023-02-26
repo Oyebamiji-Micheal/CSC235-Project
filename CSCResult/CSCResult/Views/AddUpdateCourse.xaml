@@ -4,14 +4,40 @@
              xmlns:viewmodels="clr-namespace:CSCResult.ViewModels"
              x:DataType="viewmodels:AddUpdateCoursePageViewModel"
              Title="Add/Update Course"
-             x:Class="CSCResult.Views.AddUpdateCourse">
+             x:Class="CSCResult.Views.AddUpdateCourse"
+             BackgroundColor="White">
     <ContentPage.Content>
-        <StackLayout>
-            <Entry Placeholder="Course Code" Text="{Binding CourseDetail.CourseCode}" />
-            <Entry Placeholder="Course Description" Text="{Binding CourseDetail.CourseDescription}"  />
-            <Entry Placeholder="Course Unit" Text="{Binding CourseDetail.CourseUnit}"  />
-            <Picker x:Name="picker" Title="Lecturer Email" ItemsSource="{Binding EmailOptions}" SelectedItem="{Binding CourseDetail.AdminEmail}"/>
-            <Button Text="Save Details" Command="{Binding SaveCourseCommand}" />
+        <StackLayout Padding="20">
+            <Frame CornerRadius="5"
+                   BorderColor="Black"
+                   BackgroundColor="Gray"
+                   Margin="0,20,0,0">
+                <StackLayout>
+                    <Entry Placeholder="Course Code" 
+                           PlaceholderColor="White"
+                           Text="{Binding CourseDetail.CourseCode}" 
+                           TextColor="White"/>
+                    <Entry Placeholder="Course Description"
+                           PlaceholderColor="White"
+                           Text="{Binding CourseDetail.CourseDescription}"  
+                           TextColor="White"/>
+                    <Entry Placeholder="Course Unit" 
+                           PlaceholderColor="White"
+                           Text="{Binding CourseDetail.CourseUnit}"  
+                           TextColor="White"/>
+                    <Picker x:Name="picker" 
+                            Title="Lecturer Email" 
+                            TitleColor="White"
+                            ItemsSource="{Binding EmailOptions}" 
+                            SelectedItem="{Binding CourseDetail.AdminEmail}"
+                            TextColor="White"/>
+                    <Button Text="Save Details" 
+                            Command="{Binding SaveCourseCommand}" 
+                            BackgroundColor="White"
+                            TextColor="Black"
+                            Margin="0,10,0,0"/>
+                </StackLayout>
+            </Frame>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
