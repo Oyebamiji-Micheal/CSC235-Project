@@ -145,4 +145,13 @@
   <ItemGroup>
     <BundleResource Include="Resources\student_background.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\courses.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\profile_pic_placeholder.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\result.jpg" />
+  </ItemGroup>
 </Project>
