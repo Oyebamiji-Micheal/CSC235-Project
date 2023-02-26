@@ -87,11 +87,12 @@ namespace CSCResult.ViewModels
             if (course != null)
             {
                 var response = await App.Current.MainPage.DisplayActionSheet("Options!", "Cancel", null, "Update Course", "Delete Course");
-
+                
                 if (response == "Update Course")
                 {
-                    await App.Current.MainPage.Navigation.PushAsync(new AddUpdateCourse(course));
-                }
+                    await App.Current.MainPage.Navigation.PushModalAsync(new AddUpdateCourse(course));
+                    // await App.Current.MainPage.Navigation.PushAsync(new AddUpdateCourse(course));
+                }   
                 else if (response == "Delete Course")
                 {
                     IsBusy = true;
