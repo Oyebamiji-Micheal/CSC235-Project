@@ -53,6 +53,7 @@ There are a few limitations of this app that should be noted. The developer is n
 - Navigation is not ideally handled
 - Constraints are not placed on the number of courses a student can register
 - Students can delete and update any course without any restriction
+- The app does not allow students to download and print their results
 - There are a few more limitations as well. However, the primary objective of this project has been achieved.
 
 <a id='improvements'></a>
